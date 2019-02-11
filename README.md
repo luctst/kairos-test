@@ -1,5 +1,5 @@
 # Kairos-test
-*Liste des caractéres marvel.*
+*Liste des personnages marvel.*
 
 ## Features:
 * JavaScript ES6.
@@ -11,44 +11,44 @@
 * Bootstrap.
 * Sass.
 
-## Structure:
+## Installation:
+Fork this project and use:
 ```
--- .github/
--- docs/
-   - index.html
-   - bundle.js
-   - style.css
--- node_modules/
--- src/
-   -- assets/
-      -- img/
-      -- scss/
-   -- model/
-      - fn.js
-   -- view/
-      -- components/
-         - Cards.js
-         - CharactersBtn.js
-         - CharactersLoaded.js
-         - Header.js
-         - Loader.js
-         - LoaderImg.js
-   - app.js
-   - index.html
--- test/
-.babelrc
-.eslintrc
-.gitignore
-.prettierrc
-.package-lock.json
-package.json
-README.md
-webpack.config.js
+git clone git@github.com:luctst/kairos-test.git
+```
+Next use `npm install` to install dependencies.
+
+To run your app use this command:
+```
+npm start
 ```
 
 ## Getting started:
 *Comment se déroule l'application*
-J'utilise webpack pour générer le 
+
+Les fichiers sur le serveur sont situés dans le dossier `docs` ils sont minifiés pour optimiser l'application.
+
+Les fichiers de développement sont dans le dossier `src`, voiçi sa structure:
+
+* Assets - contient les dossiers `img` et `scss`.
+* Model - contient les fichiers pour gérer les différents models.
+* View - contient les fichiers contenant les différents composants qui gérent l'interface.
+* Le fichier `app.js` est le controller il contient le composant `App` qui est le composant principal et gére l'état de notre application, c'est également ce fichier qui sert de point d'entrée à webpack et sera bundlé pour `bundle.js`.
+* Le fichier `index.html` est le fichier HTML principal.
+
+### Lancer l'application:
+Quand vous utilisez `npm start` webpack lance le plugin `webpack-dev-server` qui watch les fichiers dans le dossier `docs` pour cela webpack exécute plusieurs étapes:
+
+* Bundle app.js - exécute tous les imports listés dans le fichier et utilise babel pour transpiler le code en un code accessible sur tous les navigateurs web.
+* Prends le fichier `index.html` et l'utilise comme template avec `html-wepack-plugin` pour le placer dans le dossier `docs` avec tous les fichiers nécessaires comme `bundle.js`, `style.css`.
+* Convertit le fichier `main.scss` en un fichier `style.css` et le place dans le dossier `docs`.
+
+### build l'application:
+Une fois que le code est prêt à être envoyé sur le serveur utilisez la commande:
+```
+npm run build
+```
+En interne webpack passe en mode `production` qui a pour effet de minifier les fichiers et les placent dans le dossier `docs` qui peuvent maintenant être envoyés sur un serveur.
 
 ## Authors:
 * **Tostée Lucas** - Follow me on [Twitter](https://www.twitter.com/@ltostee), personal website [Tostée Lucas](https://www.lucas-tostee.com).
