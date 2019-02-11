@@ -2,6 +2,7 @@
 *Liste des personnages marvel.*
 
 ## Features:
+* [API marvel](https://developer.marvel.com/)
 * JavaScript ES6.
 * ReactJs.
 * Webpack.
