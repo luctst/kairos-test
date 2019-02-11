@@ -18,10 +18,7 @@ git clone git@github.com:luctst/kairos-test.git
 ```
 Next use `npm install` to install dependencies.
 
-To run your app use this command:
-```
-npm start
-```
+Pour lancer votre application rendez-vous à la section **Getting started > Lancer l'application**.
 
 ## Getting started:
 *Comment se déroule l'application*
@@ -37,7 +34,11 @@ Les fichiers de développement sont dans le dossier `src`, voiçi sa structure:
 * Le fichier `index.html` est le fichier HTML principal.
 
 ### Lancer l'application:
-Quand vous utilisez `npm start` webpack lance le plugin `webpack-dev-server` qui watch les fichiers dans le dossier `docs` pour cela webpack exécute plusieurs étapes:
+Pour lancer votre application en local et pouvoir la tester utilisez la commande:
+```
+npm start
+```
+Webpack va alors lancer un serveur local sur lequel vous pourrez commencer à développer votre application. Pour cela webpack exécute plusieurs étapes:
 
 * Bundle app.js - exécute tous les imports listés dans le fichier et utilise babel pour transpiler le code en un code accessible sur tous les navigateurs web.
 * Prends le fichier `index.html` et l'utilise comme template avec `html-wepack-plugin` pour le placer dans le dossier `docs` avec tous les fichiers nécessaires comme `bundle.js`, `style.css`.
