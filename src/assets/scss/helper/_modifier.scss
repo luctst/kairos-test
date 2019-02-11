@@ -1,0 +1,29 @@
+/**
+* Import
+*/
+@import "./animations";
+
+/**
+* Img
+*/
+.is__img__card {
+    width: 100%;
+    height: auto;
+    border-radius: 1%;
+}
+.is__loader__img {
+    display: inline-block;
+    margin-right: 0;
+    padding: 2.5%;
+}
+.is__loader__img:after {
+    content: " ";
+    display: block;
+    width: 20px;
+    height: 20px;
+    margin: 1px;
+    border-radius: 50%;
+    border: 2px solid #007bff;
+    border-color: #007bff transparent #007bff transparent;
+    animation: lds-dual-ring 1.2s linear infinite;
+}
