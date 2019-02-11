@@ -12,11 +12,11 @@
 * Sass.
 
 ## Installation:
-Fork this project and use:
+Forkez le projet et utilisez la commande:
 ```
 git clone git@github.com:luctst/kairos-test.git
 ```
-Next use `npm install` to install dependencies.
+Ensuite utilisez `npm install` pour installer toutes les dépendances.
 
 Pour lancer votre application rendez-vous à la section **Getting started > Lancer l'application**.
 
