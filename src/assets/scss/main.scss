@@ -1,5 +1,4 @@
-@import "./general.scss";
-@import "./helper/modifier.scss";
-@import "./layout/container.scss";
-@import "./layout/content.scss";
-@import "./layout/header.scss";
+@import './helper/modifier';
+@import "./components/characters-option";
+@import "./components/content-picture";
+@import "./components/main-content";

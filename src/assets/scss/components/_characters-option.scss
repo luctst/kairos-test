@@ -1,0 +1,10 @@
+.characters--option {
+    display: flex;
+    align-items: center;
+    input {
+        flex: 0 0 25%;
+    }
+    p {
+        margin: 0 2% 0 0;
+    }
+}
