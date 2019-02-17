@@ -2,6 +2,7 @@
  * Import
  */
 import React from "react";
+import {NavLink} from 'react-router-dom';
 
 /**
  * Déclaration
@@ -13,12 +14,10 @@ const Cards = props => {
                 <div className="content--title">
                     <h1 className="display-5">Name: {props.name}</h1>
                 </div>
-                <div className="content--description">
-                    {
-                        props.desc === "" ?
-                            <p className="lead">No description...</p>
-                            : <p className="lead">{props.desc}</p>
-                    }
+                <div className="content--button">
+                    <button className="btn btn-primary">
+                        <NavLink className="is__link__info" to={`/${props.id}`}>More info</NavLink>
+                    </button>
                 </div>
                 <hr />
                 <div className="content--series">
