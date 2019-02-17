@@ -10,17 +10,19 @@ const html = require("html-webpack-plugin");
  */
 module.exports = {
     mode: "development",
-    entry: path.resolve(__dirname, "src", "app.js"),
+    entry: path.resolve(__dirname, "src", "index.js"),
     output: {
         path: path.resolve(__dirname, "docs"),
-        filename: "bundle.js"
+        filename: "bundle.js",
+        publicPath: "/"
     },
     devServer: {
         contentBase: path.resolve(__dirname, "docs"),
         compress: true,
         port: 8080,
         open: true,
-        disableHostCheck: true
+        disableHostCheck: true,
+        historyApiFallback: true,
     },
     module: {
         rules: [
