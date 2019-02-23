@@ -6,7 +6,6 @@ import React from "react";
 import {render} from "react-dom";
 import { BrowserRouter as Router, Switch, Route} from "react-router-dom";
 import CharacterInfo from "./routes/CharacterInfo";
-import Error from "./view/components/Error";
 import App from "./view/app";
 
 /**
@@ -15,7 +14,7 @@ import App from "./view/app";
 const root = document.querySelector("#root");
 
 /**
- * Déclaration
+ * Main: HOC component who render App and handle routes.
  */
 export class Main extends React.Component {
     render() {
