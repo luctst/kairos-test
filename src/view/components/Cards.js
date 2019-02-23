@@ -5,7 +5,7 @@ import React from "react";
 import {NavLink} from 'react-router-dom';
 
 /**
- * Déclaration
+ * Cards: Create a little card with info's about a character.
  */
 const Cards = props => {
     return (

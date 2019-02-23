@@ -4,9 +4,9 @@
 import React from "react";
 
 /**
- * Déclaration
+ * CharactersLoaded: Number of characters loaded.
  */
-const CharactersLoaded = props => {
+export const CharactersLoaded = props => {
     return (
         <section className="container mt-3">
             <div className="row">
@@ -17,8 +17,3 @@ const CharactersLoaded = props => {
         </section>
     );
 }
-
-/**
- * Export
- */
-export default CharactersLoaded;

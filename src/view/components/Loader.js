@@ -3,10 +3,6 @@
  */
 import React from "react";
 
-
-/**
- * Déclaration
- */
 const style = {
     "height": "100vh",
     "display": "flex",
@@ -14,6 +10,10 @@ const style = {
     "alignItems": "center",
     "textAlign": "center"
 }
+
+/**
+ * Loader: First component when data are loading.
+ */
 const Loader = () => {
     return (
         <section className="container" style={style}>

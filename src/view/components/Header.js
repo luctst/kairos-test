@@ -4,21 +4,18 @@
 import React from "react";
 
 /**
- * Déclaration
+ * Header: Used for render the main title of the app.
  */
-const Header = props => {
-    return (
-        <header className="container mt-3 mb-3">
-            <div className="row">
-                <div className="col-12">
-                    <h1 className="text-center">{props.title}</h1>
+export default class Header extends React.PureComponent {
+    render() {
+        return (
+            <header className="container mt-3 mb-3">
+                <div className="row">
+                    <div className="col-12">
+                        <h1 className="text-center">Marvel Characters List</h1>
+                    </div>
                 </div>
-            </div>
-        </header>
-    );
+            </header>
+        );
+    }
 }
-
-/**
- * Export
- */
-export default Header;

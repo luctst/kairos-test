@@ -5,9 +5,9 @@ import React from "react";
 import LoaderImg from "./LoaderImg";
 
 /**
- * Déclaration
+ * CharactersBtn: HOC, Number of characters with <LoaderImg/> component.
  */
-const CharactersBtn = props => {
+export const CharactersBtn = props => {
     return (
         <section className="container">
             <div className="characters--option">
@@ -18,8 +18,3 @@ const CharactersBtn = props => {
         </section>
     );
 }
-
-/**
- * Export
- */
-export default CharactersBtn;
