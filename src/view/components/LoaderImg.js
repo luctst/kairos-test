@@ -4,13 +4,8 @@
 import React from "react";
 
 /**
- * Déclaration
+ * Animation when input value change
  */
-const LoaderImg = () => {
+export const LoaderImg = () => {
     return <p className="is__loader__img"></p>
 };
-
-/**
- * Export
- */
-export default LoaderImg;

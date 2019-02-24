@@ -14,7 +14,7 @@ const style = {
 /**
  * Loader: First component when data are loading.
  */
-const Loader = () => {
+export const Loader = () => {
     return (
         <section className="container" style={style}>
             <div className="row">
@@ -25,8 +25,3 @@ const Loader = () => {
         </section>
     );
 }
-
-/**
- * Export
- */
-export default Loader;
