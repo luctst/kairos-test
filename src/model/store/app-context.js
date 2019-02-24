@@ -4,10 +4,7 @@
 import React from "react";
 
 /**
- * Crate global context for the app
- * @param Object Who hold all data of our app.
+ * Hold data communicable between components of our app.
+ * @param Object Hold data.
  */
-export default React.createContext({
-    loaderActive: true,
-    dataLoading: false
-});
+export default React.createContext();
