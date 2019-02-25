@@ -22,3 +22,18 @@ export const getDataThen = (bdd, props) => {
         .then(dataParsed => props += dataParsed.data.results)
         .catch(error => error);
 }
+
+/**
+ * Create new tab with data to display in <Cards/> component
+ * @param Number the number of link in the <Pagination/> component.
+ * @param Array the array to push the data.
+ * @returns new array.
+ */
+export const pushInTab = (numberOfPages, tab) => {
+    for (let i = 0; i < numberOfPages; i++) {
+        tab.push({
+            id: i,
+            index: i * 5,
+        });
+    }
+}
