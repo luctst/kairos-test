@@ -14,7 +14,8 @@ export default class App extends React.Component {
     static contextType = AppContext;
 
     state = {
-        cl: 10
+        cl: 10,
+        actualLinkPage: this.props.location.pathname
     }
 
     getInputValue = event => {
@@ -29,6 +30,7 @@ export default class App extends React.Component {
     }
 
     render() {
+        this.context.actualLinkPage = this.state.actualLinkPage;
         return (
             <React.Fragment>
                 <CharactersBtn handleInputValue={this.getInputValue}/>

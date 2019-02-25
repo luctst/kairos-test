@@ -29,7 +29,7 @@ export class Main extends React.Component {
             .then(dataParsed => this.setState({
                 marvelData: dataParsed.data.results,
                 loaderActive: false,
-                pageNumber: this.state.cl / 5,
+                pageNumber: this.state.cl / 5
             }));
     }
 
@@ -41,8 +41,8 @@ export class Main extends React.Component {
                     <React.Fragment>
                         <Header/>
                         <Switch>
-                            <Route path="/:id" exact component={CharacterInfo} />
-                            <Route path="/" exact component={App} />
+                            <Route path="/:id" component={CharacterInfo} />
+                            <Route exact path="/"component={App} />
                         </Switch>
                     </React.Fragment>
                 </Router>

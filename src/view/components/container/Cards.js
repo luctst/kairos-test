@@ -25,7 +25,6 @@ export default class Cards extends React.Component {
         } else {
             const dataParsed = await getData(`${marvelUrlApi}/characters?limit=${this.context.cl}&${marvelApiKey}`);
             this.context.marvelData = dataParsed.data.results;
-            console.log("data parsed");
             this.forceUpdate();
             return true;
         }

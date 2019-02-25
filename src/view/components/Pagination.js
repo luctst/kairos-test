@@ -1,40 +1,42 @@
 /**
  * Import, Variables
  */
-import React, {useState} from "react";
+import React, { useState } from "react";
+import { NavLink } from "react-router-dom";
 import AppContext from "../../model/store/app-context";
 
 /**
  * Render a pagination
  */
 export const Pagination = () => {
-    const [page, setPage] = useState([]);
+    let [pages] = useState([]);
     return (
         <AppContext.Consumer>
             {context => {
-                for (let i = 1; i <= context.pageNumber; i++) {
-                    page.push(
-                        <li key={i} className="page-item">
-                            <a className="page-link">{i}</a>
-                        </li>
-                    );
+                pages = [];
+                for (let i = 1; i <= Math.ceil(context.pageNumber); i++) {
+                    pages.push(i);
                 }
                 return (
                     <nav aria-label="Page navigation example">
                         <ul className="pagination">
-                            <li className="page-item">
-                                <a className="page-link" href="#" aria-label="Previous">
-                                    <span aria-hidden="true">&laquo;</span>
-                                    <span className="sr-only">Previous</span>
-                                </a>
-                            </li>
-                            {page}
-                            <li className="page-item">
-                                <a className="page-link" href="#" aria-label="Next">
-                                    <span aria-hidden="true">&raquo;</span>
-                                    <span className="sr-only">Next</span>
-                                </a>
-                            </li>
+                            {
+                                pages.map((el, i) => {
+                                    if (i === 0 && context.actualLinkPage === "/") {
+                                        return (
+                                            <li key={i} className="page-item active">
+                                                <NavLink to={`?cards=${el}`} className="page-link">{el}</NavLink>
+                                            </li>
+                                        );
+                                    } else {
+                                        return (
+                                            <li key={i} className="page-item">
+                                                <NavLink to={`?cards=${el}`} className="page-link">{el}</NavLink>
+                                            </li>
+                                        );
+                                    }
+                                })
+                            }
                         </ul>
                     </nav>
                 );
