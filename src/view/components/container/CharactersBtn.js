@@ -2,7 +2,7 @@
  * Import
  */
 import React from "react";
-import AppContext from "../../../model/store/app-context";
+import AppContext from "../../../model/store/GlobalState";
 
 /**
  * CharactersBtn: HOC, Number of characters with <LoaderImg/> component.

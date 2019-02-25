@@ -2,7 +2,7 @@
  * Import
  */
 import React from "react";
-import AppContext from "../../model/store/app-context";
+import AppContext from "../../model/store/GlobalState";
 
 /**
  * CharactersLoaded: Number of characters loaded.
