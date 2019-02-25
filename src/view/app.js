@@ -2,41 +2,65 @@
  * Import, Variables
  */
 import React from "react";
-import AppContext from "../model/store/app-context";
-import Cards from "./components/container/Cards";
+import {BrowserRouter as Router, Route} from "react-router-dom";
+import {pushInTab} from "../model/functions";
+import AppContext from "../model/store/GlobalState";
+import Cards from "./components/Cards";
 import {CharactersBtn} from "./components/container/CharactersBtn";
 import {CharactersLoaded} from "./components/CharactersLoaded";
+import { Pagination } from "./components/Pagination";
 
 /**
  * App: HOC component holds all the component's of our app.
  */
 export default class App extends React.Component {
-    static contextType = AppContext;
-
-    state = {
-        cl: 10,
-        actualLinkPage: this.props.location.pathname
+    constructor(props) {
+        super(props);
+        this.state = {
+            cl: 10,
+            cards: []
+        }
+        pushInTab(Math.ceil(this.state.cl / 5), this.state.cards);
     }
 
+    static contextType = AppContext;
+    
     getInputValue = event => {
         if (event.target.value !== "") {
-            this.setState({cl: parseInt(event.target.value)});
+
+            const value = event.target.value;
             this.context.cl = parseInt(event.target.value);
-            return this.context.pageNumber = event.target.value / 5;
+            this.context.pageNumber = event.target.value / 5;
+
+            this.setState(state => {
+                state.cards = [];
+                state.cl = parseInt(value);
+                pushInTab(this.context.pageNumber, state.cards);
+                return state;
+            });
         } else {
             this.context.cl = 10;
             return this.setState({cl: 10});
         }
     }
 
+    componentDidMount() {
+        this.context.cards = this.state.cards;
+    }
+    componentDidUpdate() {
+        this.context.cards = this.state.cards;
+    }
+
     render() {
-        this.context.actualLinkPage = this.state.actualLinkPage;
         return (
-            <React.Fragment>
-                <CharactersBtn handleInputValue={this.getInputValue}/>
-                <CharactersLoaded/>
-                <Cards/>
-            </React.Fragment>
+            <Router>
+                <React.Fragment>
+                    <CharactersBtn handleInputValue={this.getInputValue}/>
+                    <CharactersLoaded/>
+                    <Route path={`/cards/:el`} component={Cards} exact/>
+                    <Pagination/>
+                </React.Fragment>
+            </Router>
         );
     }
 }

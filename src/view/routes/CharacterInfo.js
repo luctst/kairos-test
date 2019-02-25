@@ -3,7 +3,7 @@
  */
 import React from 'react';
 import {NavLink} from "react-router-dom";
-import AppContext from "../../model/store/app-context";
+import AppContext from "../../model/store/GlobalState";
 
 /**
  * CharacterInfo: Hold more infos about a character
