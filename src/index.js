@@ -4,7 +4,7 @@
 import "./assets/scss/main.scss";
 import React from "react";
 import {render} from "react-dom";
-import AppContext from "./model/store/app-context";
+import GlobalState from "./model/store/GlobalState";
 import { BrowserRouter as Router, Switch, Route} from "react-router-dom";
 import { Loader } from "./view/components/Loader";
 import CharacterInfo from "./view/routes/CharacterInfo";
@@ -36,17 +36,17 @@ export class Main extends React.Component {
     render() {
         if (this.state.loaderActive) return <Loader />;
         return (
-            <AppContext.Provider value={this.state}>
+            <GlobalState.Provider value={this.state}>
                 <Router>
                     <React.Fragment>
                         <Header/>
                         <Switch>
-                            <Route path="/:id" component={CharacterInfo} />
+                            <Route path="/:id" component={CharacterInfo} exact/>
                             <Route exact path="/"component={App} />
                         </Switch>
                     </React.Fragment>
                 </Router>
-            </AppContext.Provider>
+            </GlobalState.Provider>
         );
     }
 }
